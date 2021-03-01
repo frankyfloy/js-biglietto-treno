@@ -1,8 +1,8 @@
 //inizializzazione variabili
 var km = 0;
 var età = -1;
-var scontoMinori = 0.20;
-var scontoOver65 = 0.40;
+var scontoMinori = 20;
+var scontoOver65 = 40;
 var prezzoKm = 0.21;
 var prezzoTotale = 0;
 
@@ -28,16 +28,16 @@ if (!isNaN(etàTemp)) {
 
 // Calcolo sconto
 if (!isNaN(km)  && !isNaN(età)) {
-    var prezzoTemp = prezzoKm * km;
+    prezzoTotale = prezzoKm * km;
 
     if (età < 18) {
-        prezzoTotale = prezzoTemp - (prezzoTemp * scontoMinori);
+        prezzoTotale -= prezzoTotale * scontoMinori / 100;
         console.log(prezzoTotale);
     } else if (età >= 65) {
-        prezzoTotale = prezzoTemp - (prezzoTemp * scontoOver65);
+        prezzoTotale -= prezzoTotale * scontoOver65 / 100;
         console.log(prezzoTotale);
     }  else{
-        prezzoTotale = prezzoTemp;
+        prezzoTotale;
         console.log(prezzoTotale);
-    }    
+    }
 }
