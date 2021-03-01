@@ -57,5 +57,5 @@ if (!isNaN(km)  && !isNaN(età)) {
         prezzoTotale;
         console.log(prezzoTotale);
     }
-    document.getElementById('prezzoBiglietto').innerHTML = prezzoTotale;
+    document.getElementById('prezzoBiglietto').innerHTML = prezzoTotale.toFixed(2);
 }
